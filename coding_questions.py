@@ -17,7 +17,7 @@ def first_odds():
         current_number += 1
         if current_number % 2 == 1:
             print(current_number)
-    return 
+    
 
    
 
@@ -36,7 +36,7 @@ def max_num_in_list(a_list):
 # (true/false). def is_leap_year(a_year):
 def is_leap_year(a_year):
     """Returning whether a given year is a leap year or not"""
-    return(a_year % 4 == 0 and a_year % 100 != 100)
+    return(a_year % 400 == 0 or a_year % 4 == 0 and a_year % 100 != 0)
 
 
 
@@ -44,12 +44,14 @@ def is_leap_year(a_year):
 # Write a function to check to see if all numbers in the list are consecutive numbers. For 
 # example, [2,3,4,5,6,7] are consecutive numbers, but [1,2,4,5] are not consecutive numbers. 
 # The return should be boolean Type. def is_consecutive(a_list):
+
 def is_consecutive(a_list):
-    """Return whether or not a list is consecutive or note"""
-    while a_list:
+    status = True  
+    while len(a_list) > 1:
         num = a_list.pop()
-        if a_list[-1] == num - 1:
-            return True
+        if a_list[-1] == num -1:
+            continue 
         else:
-            return False
+            status = False
+    return status 
 
